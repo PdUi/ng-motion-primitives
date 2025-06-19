@@ -10,11 +10,11 @@ const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommen
 
 module.exports = [
   {
-    ignores: ['.angular/', '.github/', '.vscode/', 'dist/', 'node_modules/']
+    ignores: ['.angular/', '.github/', '.vscode/', 'dist/', 'node_modules/'],
   },
   {
-    files: ["**/*.ts"],
-    ignores: ["**/*.spec.ts"],
+    files: ['**/*.ts'],
+    ignores: ['**/*.spec.ts'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
@@ -22,9 +22,9 @@ module.exports = [
       },
     },
     plugins: {
-      "@typescript-eslint": typescriptPlugin,
-      "@angular-eslint": angularPlugin,
-      prettier: prettierPlugin
+      '@typescript-eslint': typescriptPlugin,
+      '@angular-eslint': angularPlugin,
+      prettier: prettierPlugin,
     },
     processor: angular.processInlineTemplates,
     rules: {
@@ -35,43 +35,43 @@ module.exports = [
       '@typescript-eslint/no-magic-numbers': [
         'error',
         {
-          ignoreEnums: true
-        }
-      ]
-    }
+          ignoreEnums: true,
+        },
+      ],
+    },
   },
   {
-    files: ["**/*.spec.ts"],
+    files: ['**/*.spec.ts'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
         project: ['./demo/tsconfig.spec.json'],
-      }
+      },
     },
     plugins: {
-      "@typescript-eslint": typescriptPlugin,
-      "@angular-eslint": angularPlugin,
-      prettier: prettierPlugin
+      '@typescript-eslint': typescriptPlugin,
+      '@angular-eslint': angularPlugin,
+      prettier: prettierPlugin,
     },
     rules: {
       ...typescriptPlugin.configs.recommended.rules,
       ...angularPlugin.configs.recommended.rules,
-      ...prettierPlugin.configs?.rules
+      ...prettierPlugin.configs?.rules,
     },
   },
   {
-    files: ["**/*.html"],
+    files: ['**/*.html'],
     languageOptions: {
-      parser: angularTemplateParser
+      parser: angularTemplateParser,
     },
     plugins: {
-        "@angular-eslint/template": angularTemplatePlugin,
-        prettier: prettierPlugin
-      },
+      '@angular-eslint/template': angularTemplatePlugin,
+      prettier: prettierPlugin,
+    },
     rules: {
       ...angularTemplatePlugin.configs.all.rules,
-      '@angular-eslint/template/no-call-expression': 'off'
+      '@angular-eslint/template/no-call-expression': 'off',
     },
   },
-  eslintPluginPrettierRecommended
+  eslintPluginPrettierRecommended,
 ];

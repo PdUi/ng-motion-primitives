@@ -1,0 +1,23 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  border-block-end: 1px solid;
+
+  li {
+    &.active {
+      border-block-end: 1px solid purple;
+    }
+
+    + li {
+      padding-inline-start: 1em;
+    }
+
+    button {
+      border: none;
+      background: none;
+      padding: 0;
+    }
+  }
+}

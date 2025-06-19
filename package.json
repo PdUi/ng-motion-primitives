@@ -6,18 +6,24 @@
     "email": "hello@pinarydevelopment.com"
   },
   "scripts": {
-    "start": "ng serve --project ng-motion-primitives-demo",
+    "start": "ng serve --project ng-motion-primitives-demo --open",
     "serve:ssr:ng-motion-primitives-demo": "node dist/ng-motion-primitives-demo/server/server.mjs",
     "spelling:lint": "cspell . --config=.cspell.json",
     "style:lint": "stylelint demo/**/*.scss",
 
+    "libraries:lint": "ng lint --project motion-primitives",
+    "libraries:build": "ng build --project motion-primitives",
+    "libraries:test": "ng test --project motion-primitives",
+    "libraries:ci:test": "ng test --project motion-primitives --watch=false --source-map=false --reporters=progress,coverage --code-coverage=true --browsers=ChromeHeadless",
+
     "demo:lint": "ng lint --project ng-motion-primitives-demo",
-    "demo:ci:build": "ng build --project ng-motion-primitives-demo --configuration production",
+    "demo:build": "ng build --project ng-motion-primitives-demo",
+    "demo:test": "ng test --project ng-motion-primitives-demo",
     "demo:ci:test": "ng test --project ng-motion-primitives-demo --watch=false --source-map=false --reporters=progress,coverage --code-coverage=true --browsers=ChromeHeadless",
 
-    "ci:lint": "npm run demo:lint && npm run spelling:lint && npm run style:lint",
-    "ci:build": "npm run demo:ci:build",
-    "ci:test": "npm run demo:ci:test"
+    "ci:lint": "npm run libraries:lint && npm run demo:lint && npm run spelling:lint && npm run style:lint",
+    "ci:build": "npm run libraries:build -- --configuration production && npm run demo:build -- --configuration production",
+    "ci:test": "npm run libraries:ci:test && npm run demo:ci:test"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +36,7 @@
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.2",
     "express": "^5.1.0",
+    "gsap": "^3.13.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -37,6 +44,7 @@
     "@angular/build": "^20.0.2",
     "@angular/cli": "^20.0.2",
     "@angular/compiler-cli": "^20.0.0",
+    "@angular/localize": "^20.0.3",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
@@ -51,6 +59,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.0.0",
     "prettier": "^3.5.3",
     "prettier-eslint": "^16.4.2",
     "stylelint": "^16.20.0",

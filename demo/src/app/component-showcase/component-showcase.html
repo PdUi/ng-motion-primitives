@@ -1,0 +1,24 @@
+<ul>
+  <li [class.active]="activeTab() === showcaseType.preview">
+    <button type="button" i18n="@@previewTabButton" (click)="setActiveTab(showcaseType.preview)">
+      Preview
+    </button>
+  </li>
+  <li [class.active]="activeTab() === showcaseType.code">
+    <button type="button" i18n="@@codeTabButton" (click)="setActiveTab(showcaseType.code)">
+      Code
+    </button>
+  </li>
+</ul>
+
+@if (activeTab() === showcaseType.code) {
+  <section>
+    <ng-content select=".code" />
+  </section>
+}
+
+@if (activeTab() === showcaseType.preview) {
+  <section>
+    <ng-content select=".preview" />
+  </section>
+}
