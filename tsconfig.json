@@ -7,6 +7,12 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "@p2d/motion-primitives": [
+        "./dist/motion-primitives",
+        "./libraries/motion-primitives/src/public-api"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -29,6 +35,12 @@
     },
     {
       "path": "./demo/tsconfig.spec.json"
+    },
+    {
+      "path": "./libraries/motion-primitives/tsconfig.lib.json"
+    },
+    {
+      "path": "./libraries/motion-primitives/tsconfig.spec.json"
     }
   ]
 }

@@ -30,6 +30,9 @@ jobs:
       - name: Build application
         run: npm run ci:build
 
+      - name: Rename index file to default
+        run: mv github-pages/browser/index.csr.html github-pages/browser/index.html
+
       - name: Upload app artifacts
         uses: actions/upload-pages-artifact@v3
         with:

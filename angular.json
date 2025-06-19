@@ -33,7 +33,10 @@
             "outputMode": "server",
             "ssr": {
               "entry": "demo/src/server.ts"
-            }
+            },
+            "polyfills": [
+              "@angular/localize/init"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +91,9 @@
             ],
             "styles": [
               "demo/src/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           }
         },
@@ -99,6 +105,42 @@
               "demo/**/*.html"
             ],
             "eslintConfig": "demo/eslint.config.js"
+          }
+        }
+      }
+    },
+    "motion-primitives": {
+      "projectType": "library",
+      "root": "libraries/motion-primitives",
+      "sourceRoot": "libraries/motion-primitives/src",
+      "prefix": "p2d",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libraries/motion-primitives/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libraries/motion-primitives/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libraries/motion-primitives/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "libraries/motion-primitives/**/*.ts",
+              "libraries/motion-primitives/**/*.html"
+            ],
+            "eslintConfig": "libraries/motion-primitives/eslint.config.js"
           }
         }
       }

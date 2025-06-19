@@ -1,0 +1,8 @@
+:host ::ng-deep {
+  p2d-accordion+p2d-accordion {
+    margin-block-start: .25em;
+    border-block-start: 1px solid;
+    padding-block-start: .25em;
+    border-image: linear-gradient(to right, transparent 10%, black 50%, transparent 90%) 100% 1;
+  }
+}

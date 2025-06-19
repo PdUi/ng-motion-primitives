@@ -1,1 +1,56 @@
-// style-lint-disable
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+
+  .home-link {
+    text-decoration: none;
+
+    .logo-flair {
+      display: none;
+    }
+  }
+
+  nav {
+    align-content: center;
+    flex-grow: 1;
+    text-align: end;
+  }
+}
+
+.content {
+  display: flex;
+  align-self: center;
+  width: 75vw;
+
+  nav {
+    margin-inline-end: 1.5em;
+
+    h4 {
+      white-space: nowrap;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      a {
+        list-style: none;
+        padding-inline-start: 1em;
+        border-inline-start: 1px solid black;
+        text-decoration: none;
+
+        &.active {
+          border-inline-start: 1px solid grey;
+        }
+      }
+    }
+  }
+
+  main {
+    flex-grow: 1;
+  }
+}
