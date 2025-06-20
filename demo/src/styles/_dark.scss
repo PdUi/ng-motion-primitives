@@ -1,0 +1,14 @@
+@mixin global-dark-styles {
+  background-color: var(--neutral);
+  color: var(--neutral-l90);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    @include global-dark-styles();
+  }
+}
+
+[data-theme='dark'] {
+  @include global-dark-styles();
+}

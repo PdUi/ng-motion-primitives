@@ -1,3 +1,6 @@
+@use './light';
+@use './dark';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -5,11 +8,23 @@
 
 header {
   display: flex;
+  background-color: var(--neutral-l90);
+  padding: var(--space-s);
 
   .home-link {
     text-decoration: none;
 
     .logo-flair {
+      rotate: -15deg;
+      font-family: 'Passions Conflict', cursive;
+      font-size: 60px;
+      margin-block-start: -60px;
+      margin-inline-start: 55px;
+      border: 1px solid;
+      text-align: center;
+      text-box-trim: trim-both;
+      text-box-edge: cap alphabetic;
+      padding-bottom: 15px;
       display: none;
     }
   }
@@ -24,28 +39,22 @@ header {
 .content {
   display: flex;
   align-self: center;
-  width: 75vw;
+  max-width: clamp(16rem, var(--wrapper-max-width, 98rem), 95vw);
+  padding: var(--space-s-m);
 
   nav {
-    margin-inline-end: 1.5em;
+    margin-inline-end: var(--space-s);
 
     h4 {
       white-space: nowrap;
     }
 
     ul {
-      list-style: none;
       padding: 0;
 
       a {
-        list-style: none;
-        padding-inline-start: 1em;
-        border-inline-start: 1px solid black;
+        padding-inline-start: var(--space-xs);
         text-decoration: none;
-
-        &.active {
-          border-inline-start: 1px solid grey;
-        }
       }
     }
   }

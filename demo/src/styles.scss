@@ -1,4 +1,194 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/reset';
+@use './styles/light';
+@use './styles/dark';
+
+/*
+  @link https://cube.fyi/
+  @link https://utopia.fyi
+*/
+:root {
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
+  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
+  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+
+/* @link https://colordesigner.io/color-palette-builder */
+  --red-d90: #1e0e0c;
+  --red-d80: #331514;
+  --red-d70: #491b1b;
+  --red-d60: #612021;
+  --red-d50: #792428;
+  --red-d40: #92282e;
+  --red-d30: #ad2c35;
+  --red-d20: #c72f3c;
+  --red-d10: #e33144;
+  --red: #ff334b;
+  --red-l10: #ff525b;
+  --red-l20: #ff6a6c;
+  --red-l30: #ff7f7d;
+  --red-l40: #ff938e;
+  --red-l50: #ffa6a0;
+  --red-l60: #ffb8b2;
+  --red-l70: #ffcac5;
+  --red-l80: #ffdcd8;
+  --red-l90: #ffeeeb;
+
+  --orange-d90: #1d1009;
+  --orange-d80: #301811;
+  --orange-d70: #452015;
+  --orange-d60: #5b281a;
+  --orange-d50: #72301e;
+  --orange-d40: #8a3822;
+  --orange-d30: #a24027;
+  --orange-d20: #bb482b;
+  --orange-d10: #d55130;
+  --orange: #ef5934;
+  --orange-l10: #f46c47;
+  --orange-l20: #f87e5a;
+  --orange-l30: #fc8f6e;
+  --orange-l40: #ff9f82;
+  --orange-l50: #ffaf96;
+  --orange-l60: #ffbfaa;
+  --orange-l70: #ffcfbf;
+  --orange-l80: #ffdfd4;
+  --orange-l90: #ffefe9;
+
+  --yellow-d90: #1c160b;
+  --yellow-d80: #2f2513;
+  --yellow-d70: #443518;
+  --yellow-d60: #5a461d;
+  --yellow-d50: #715821;
+  --yellow-d40: #896a25;
+  --yellow-d30: #a17c29;
+  --yellow-d20: #bb8f2d;
+  --yellow-d10: #d5a331;
+  --yellow: #efb734;
+  --yellow-l10: #f2be4c;
+  --yellow-l20: #f6c562;
+  --yellow-l30: #f8cc76;
+  --yellow-l40: #fbd38a;
+  --yellow-l50: #fdda9d;
+  --yellow-l60: #fee2b1;
+  --yellow-l70: #ffe9c4;
+  --yellow-l80: #fff0d8;
+  --yellow-l90: #fff8eb;
+
+  --green-d90: #171c0d;
+  --green-d80: #263015;
+  --green-d70: #35471a;
+  --green-d60: #465e1f;
+  --green-d50: #567723;
+  --green-d40: #689127;
+  --green-d30: #79ab2b;
+  --green-d20: #8bc62e;
+  --green-d10: #9ee231;
+  --green: #b1ff33;
+  --green-l10: #bbff51;
+  --green-l20: #c4ff68;
+  --green-l30: #cdff7d;
+  --green-l40: #d5ff91;
+  --green-l50: #ddffa4;
+  --green-l60: #e5ffb7;
+  --green-l70: #ecffc9;
+  --green-l80: #f3ffdb;
+  --green-l90: #f9ffed;
+
+  --blue-d90: #10181a;
+  --blue-d80: #17282e;
+  --blue-d70: #1d3a43;
+  --blue-d60: #224c59;
+  --blue-d50: #275f70;
+  --blue-d40: #2b7387;
+  --blue-d30: #2e87a0;
+  --blue-d20: #319cb9;
+  --blue-d10: #32b2d3;
+  --blue: #33c8ee;
+  --blue-l10: #57cef0;
+  --blue-l20: #71d3f2;
+  --blue-l30: #87d9f3;
+  --blue-l40: #9bdef5;
+  --blue-l50: #ade4f7;
+  --blue-l60: #bee9f8;
+  --blue-l70: #cfeffa;
+  --blue-l80: #dff4fc;
+  --blue-l90: #effafd;
+
+  --purple-d90: #150b1c;
+  --purple-d80: #201331;
+  --purple-d70: #2b1747;
+  --purple-d60: #371c5f;
+  --purple-d50: #432077;
+  --purple-d40: #4f2491;
+  --purple-d30: #5b28ab;
+  --purple-d20: #682cc7;
+  --purple-d10: #7430e2;
+  --purple: #8233ff;
+  --purple-l10: #924bff;
+  --purple-l20: #a260ff;
+  --purple-l30: #b074ff;
+  --purple-l40: #bd88ff;
+  --purple-l50: #ca9cff;
+  --purple-l60: #d5b0ff;
+  --purple-l70: #e1c3ff;
+  --purple-l80: #ebd7ff;
+  --purple-l90: #f5ebff;
+
+  --neutral-d100: #000000;
+  --neutral-d90: #040404;
+  --neutral-d80: #090909;
+  --neutral-d70: #0d0d0d;
+  --neutral-d60: #101010;
+  --neutral-d50: #131313;
+  --neutral-d40: #161616;
+  --neutral-d30: #181818;
+  --neutral-d20: #1a1a1a;
+  --neutral-d10: #1d1d1d;
+  --neutral: #1f1f1f;
+  --neutral-l10: #323232;
+  --neutral-l20: #454545;
+  --neutral-l30: #5a5a5a;
+  --neutral-l40: #707070;
+  --neutral-l50: #868686;
+  --neutral-l60: #9d9d9d;
+  --neutral-l70: #b5b5b5;
+  --neutral-l80: #cdcdcd;
+  --neutral-l90: #e6e6e6;
+  --neutral-l100: #ffffff;
+
+  --brand-color-1: var(--purple);
+  --brand-color-2: var(--blue);
+}
+
+* {
+  font-family: "Poly", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
 }

@@ -1,0 +1,14 @@
+@mixin global-light-styles {
+    background-color: var(--neutral-l100);
+    color: var(--neutral);
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    @include global-light-styles();
+  }
+}
+
+[data-theme='light'] {
+  @include global-light-styles();
+}

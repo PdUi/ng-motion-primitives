@@ -6,7 +6,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   selector: 'p2d-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive, NgOptimizedImage],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrls: ['./app.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 /* eslint-disable @typescript-eslint/no-extraneous-class */
