@@ -11,6 +11,13 @@ export const routes: Routes = [
           import('./demo-accordion/demo-accordion').then((m) => m.DemoAccordionComponent),
       },
       {
+        path: 'animate-background',
+        loadComponent: async () =>
+          import('./demo-animate-background/demo-animate-background').then(
+            (m) => m.DemoAnimateBackground,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'accordion',
         pathMatch: 'full',

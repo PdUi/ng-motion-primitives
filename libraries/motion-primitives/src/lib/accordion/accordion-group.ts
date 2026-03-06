@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types*/
 import {
-  ChangeDetectionStrategy,
-  Component,
   contentChildren,
+  Directive,
   effect,
   type OnDestroy,
   type OutputRefSubscription,
@@ -10,11 +9,8 @@ import {
 } from '@angular/core';
 import { AccordionComponent } from './accordion';
 
-@Component({
+@Directive({
   selector: 'p2d-accordion-group',
-  templateUrl: './accordion-group.html',
-  styleUrl: './accordion-group.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionGroupComponent implements OnDestroy {
   protected readonly accordions: Signal<readonly AccordionComponent[]> =
